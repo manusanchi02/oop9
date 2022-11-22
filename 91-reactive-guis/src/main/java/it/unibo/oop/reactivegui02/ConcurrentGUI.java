@@ -3,7 +3,6 @@ package it.unibo.oop.reactivegui02;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.lang.reflect.InvocationTargetException;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +13,7 @@ import javax.swing.SwingUtilities;
  * Second example of reactive GUI.
  */
 public final class ConcurrentGUI extends JFrame {
+    private static final long serialVersionUID = 1L;
     private static final double WIDTH_PERC = 0.2;
     private static final double HEIGHT_PERC = 0.1;
     private final JLabel display = new JLabel("0");
@@ -21,6 +21,9 @@ public final class ConcurrentGUI extends JFrame {
     private final JButton up = new JButton("up");
     private final JButton down = new JButton("down");
 
+    /**
+     * Builds a new GUI.
+     */
     public ConcurrentGUI() {
         //setting layout
         super();
@@ -46,8 +49,8 @@ public final class ConcurrentGUI extends JFrame {
     //class agent
     private class Agent implements Runnable {
         private volatile boolean stop;
-        public volatile char sign;
-        private int counter = 0;
+        private volatile char sign;
+        private int counter;
         @Override
         public void run() {
             while (!this.stop) {
@@ -68,7 +71,7 @@ public final class ConcurrentGUI extends JFrame {
                      * This is just a stack trace print, in a real program there
                      * should be some logging and decent error reporting
                      */
-                    ex.printStackTrace();
+                    ex.printStackTrace(); // NOPMD
                 }
             }
         }
@@ -88,5 +91,4 @@ public final class ConcurrentGUI extends JFrame {
             this.sign = '-';
         }
     }
-
 }
