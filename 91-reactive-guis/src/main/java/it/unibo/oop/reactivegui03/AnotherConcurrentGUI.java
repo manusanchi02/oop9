@@ -46,7 +46,9 @@ public final class AnotherConcurrentGUI extends JFrame {
         down.addActionListener((e) -> agent.downCounter());
     }
 
-    //class agent
+    /**
+     * Builds the Agent that controls the counter of the GUI.
+     */
     private class Agent2 implements Runnable {
         private volatile boolean stop;
         private volatile char sign;
@@ -93,7 +95,9 @@ public final class AnotherConcurrentGUI extends JFrame {
         public void downCounter() {
             this.sign = '-';
         }
-
+        /**
+         * Builds the Agent to count 10 seconds.
+         */
         private class AgentCount implements Runnable {
             private int sec;
             @Override
