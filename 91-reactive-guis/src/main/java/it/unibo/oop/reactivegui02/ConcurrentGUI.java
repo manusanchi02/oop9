@@ -32,8 +32,8 @@ public final class ConcurrentGUI extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         final JPanel panel = new JPanel();
         panel.add(display);
-        panel.add(up);
         panel.add(down);
+        panel.add(up);
         panel.add(stopB);
         this.getContentPane().add(panel);
         this.setVisible(true);
