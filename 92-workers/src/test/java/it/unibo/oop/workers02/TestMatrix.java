@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  * TestMatrix for worker 2.
  *
  */
+@SuppressWarnings("PMD")
 public class TestMatrix {
 
     /*
@@ -58,5 +59,4 @@ public class TestMatrix {
                     + TimeUnit.NANOSECONDS.toMillis(time) + MSEC);
         }
     }
-
 }

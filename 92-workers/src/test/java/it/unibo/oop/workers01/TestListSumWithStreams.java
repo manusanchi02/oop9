@@ -12,6 +12,7 @@ import java.util.stream.IntStream;
  * TestMatrix for worker 1.
  *
  */
+@SuppressWarnings("PMD")
 public class TestListSumWithStreams {
 
     /**
@@ -51,5 +52,4 @@ public class TestListSumWithStreams {
                     + (System.currentTimeMillis() - time) + MSEC);
         }
     }
-
 }

@@ -16,6 +16,7 @@ public final class MultiThreadedListSumClassic implements SumList {
      * @param nthread
      *            no. of thread performing the sum.
      */
+    // CPD-OFF
     public MultiThreadedListSumClassic(final int nthread) {
         this.nthread = nthread;
     }
@@ -45,7 +46,7 @@ public final class MultiThreadedListSumClassic implements SumList {
 
         @Override
         public void run() {
-            System.out.println("Working from position " + startpos + " to position " + (startpos + nelem - 1));
+            System.out.println("Working from position " + startpos + " to position " + (startpos + nelem - 1)); // NOPMD
             for (int i = startpos; i < list.size() && i < startpos + nelem; i++) {
                 this.res += this.list.get(i);
             }
@@ -64,7 +65,7 @@ public final class MultiThreadedListSumClassic implements SumList {
 
     @Override
     public long sum(final List<Integer> list) {
-        final int size = list.size() % nthread + list.size() / nthread;
+        final int size = list.size() % nthread + list.size() / nthread; // CPD-ON
         /*
          * Build a list of workers
          */

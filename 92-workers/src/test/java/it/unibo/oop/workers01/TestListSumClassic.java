@@ -11,6 +11,7 @@ import java.util.List;
  * TestMatrix for worker 1.
  *
  */
+@SuppressWarnings("PMD")
 public class TestListSumClassic {
 
     /**
@@ -50,5 +51,4 @@ public class TestListSumClassic {
                     + (System.currentTimeMillis() - time) + MSEC);
         }
     }
-
 }
